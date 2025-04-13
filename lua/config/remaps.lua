@@ -1,3 +1,10 @@
+-- This file contains custom key mappings for Neovim.
+-- <C-o> goes back to previous file
+-- <C-i> goes forward to next file
+-- g; goes to previous change
+-- g, goes to next change
+
+
 vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
 
 -- Map Ctrl+c to Escape in multiple modes
