@@ -28,9 +28,26 @@ return {
     "saadparwaiz1/cmp_luasnip",
     "L3MON4D3/LuaSnip",
   },
+
   config = function()
     local cmp = require("cmp")
     local luasnip = require("luasnip")
+
+    vim.keymap.set('i', 'C-j', function()
+      if cmp.visible() then
+        cmp.select_next_item()
+      else
+        vim.cmd("normal! j")
+      end
+    end)
+
+    vim.keymap.set('i', '<C-k>', function()
+      if cmp.visible() then
+        cmp.select_prev_item()
+      else
+        vim.cmd("normal! k")
+      end
+    end)
 
     cmp.setup({
       snippet = {
@@ -41,8 +58,8 @@ return {
       mapping = cmp.mapping.preset.insert({
         ["<C-Space>"] = cmp.mapping.complete(),
         ["<CR>"] = cmp.mapping.confirm({ select = true }),
-        ["<Tab>"] = cmp.mapping.select_next_item(),
-        ["<S-Tab>"] = cmp.mapping.select_prev_item(),
+        --["<Tab>"] = cmp.mapping.select_next_item(),
+        --["<S-Tab>"] = cmp.mapping.select_prev_item(),
       }),
       sources = cmp.config.sources({
         { name = "nvim_lsp" },

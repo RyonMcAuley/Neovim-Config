@@ -20,7 +20,8 @@ return {
     -- Quickfix List
     vim.keymap.set("n", "<leader>tq", "<cmd>Trouble qflist toggle<cr>", opts)
     -- Document Diagnostics
-    vim.keymap.set("n", "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>", opts)
+    --vim.keymap.set("n", "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>", opts)
+    vim.keymap.set("n", "<leader>xd", vim.diagnostic.open_float, opts)
     -- Location List
     vim.keymap.set("n", "<leader>xl", "<cmd>TroubleToggle loclist<cr>", opts)
     -- LSP References
