@@ -27,7 +27,7 @@ return {
           vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, silent = true, desc = desc })
         end
 
-        map("n", "gd", vim.lsp.buf.definition, "Go to Definition")
+        --map("n", "gd", vim.lsp.buf.definition, "Go to Definition")
         map("n", "K", vim.lsp.buf.hover, "Hover Docs")
         map("n", "<leader>rn", vim.lsp.buf.rename, "Rename Symbol")
         map("n", "<leader>ca", vim.lsp.buf.code_action, "Code Action")

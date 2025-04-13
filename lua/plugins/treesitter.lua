@@ -3,7 +3,7 @@ return {
     build = ":TSUpdate",
     config = function ()
     local opts = {
-          ensure_installed = { "lua", "vim", "vimdoc", "javascript", "html", "c_sharp" },
+          ensure_installed = { "lua", "vim", "vimdoc", "javascript", "html", "c_sharp", "go", "gomod" },
 	  sync_install = false,
           highlight = { enable = true },
           indent = { enable = true },
