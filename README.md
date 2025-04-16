@@ -1,4 +1,4 @@
 Directory:
 
-Linux: /local/nvim
+Linux: ~/.config/nvim
 Windows: ~/AppData/Local/nvim
