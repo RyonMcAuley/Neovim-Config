@@ -34,4 +34,11 @@ require("lazy").setup({
   checker = { enabled = true },
 })
 
-require("oxocarbon")
+-- require("oxocarbon")
+require("onedark").load()
+-- require("catppuccin").setup({
+--   flavor = "auto",
+--   transparent_background = false,
+--   term_colors = true,
+-- })
+-- require("catppuccin").load()

@@ -4,7 +4,7 @@ return {
     "github/copilot.vim",
     lazy = false, -- load on startup (or true if you want to defer)
   },
-  -- GitHub Copilot for Neovim
+  -- GitHub Copilot for Neovim
   {
     "zbirenbaum/copilot.lua",
     event = "InsertEnter",

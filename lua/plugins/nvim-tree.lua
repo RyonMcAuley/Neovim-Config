@@ -16,7 +16,7 @@ return {
         enable = true,
       },
       filters = {
-        dotfiles = false,
+        dotfiles = true,
       },
     })
   end,
