@@ -21,11 +21,13 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+vim.g.base46_cache = vim.fn.stdpath "data" .. "/base46_cache/"
+
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
     -- import your plugins
-	import = "plugins" 
+	import = "plugins"
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
@@ -34,8 +36,19 @@ require("lazy").setup({
   checker = { enabled = true },
 })
 
+dofile(vim.g.base46_cache .. "defaults")
+dofile(vim.g.base46_cache .. "statusline")
+-- require('base46').toggle_transparency()
+
+-- vim.api.nvim_create_autocmd("User", {
+--   pattern = "VeryLazy",
+--   callback = function()
+--     require("base46").toggle_transparency()
+--   end,
+-- })
+
 -- require("oxocarbon")
-require("onedark").load()
+-- require("onedark").load()
 -- require("catppuccin").setup({
 --   flavor = "auto",
 --   transparent_background = false,
