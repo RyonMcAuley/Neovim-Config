@@ -37,7 +37,6 @@ vim.api.nvim_set_keymap('n', '<C-j>', '<C-w>j', { noremap = true })
 vim.api.nvim_set_keymap('n', '<C-k>', '<C-w>k', { noremap = true })
 vim.api.nvim_set_keymap('n', '<C-l>', '<C-w>l', { noremap = true })
 --
---
 vim.keymap.set('n', '<leader>gs', OpenLazyGit, { desc = "Open LazyGit" })
 --
 --vim.keymap.set('i', '<S-CR>', function()

@@ -23,11 +23,20 @@ vim.g.maplocalleader = "\\"
 
 vim.g.base46_cache = vim.fn.stdpath "data" .. "/base46_cache/"
 
+local uname = vim.loop.os_uname().sysname
+
+local plugins = {
+  { import = "plugins.shared" },
+}
+if uname == "Linux" then
+  table.insert(plugins, { import = "plugins.linux" })
+end
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
     -- import your plugins
-	import = "plugins"
+	--import = plugins
+  plugins
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
