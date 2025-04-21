@@ -21,15 +21,16 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
-vim.g.base46_cache = vim.fn.stdpath "data" .. "/base46_cache/"
 
 local uname = vim.loop.os_uname().sysname
+
 
 local plugins = {
   { import = "plugins.shared" },
 }
 if uname == "Linux" then
   table.insert(plugins, { import = "plugins.linux" })
+  vim.g.base46_cache = vim.fn.stdpath "data" .. "/base46_cache/"
 end
 -- Setup lazy.nvim
 require("lazy").setup({
@@ -45,8 +46,10 @@ require("lazy").setup({
   checker = { enabled = true },
 })
 
-dofile(vim.g.base46_cache .. "defaults")
-dofile(vim.g.base46_cache .. "statusline")
+if uname == "Linux" then
+  dofile(vim.g.base46_cache .. "defaults")
+  dofile(vim.g.base46_cache .. "statusline")
+end
 -- require('base46').toggle_transparency()
 
 -- vim.api.nvim_create_autocmd("User", {
@@ -56,11 +59,13 @@ dofile(vim.g.base46_cache .. "statusline")
 --   end,
 -- })
 
+if uname == "Windows_NT" then
 -- require("oxocarbon")
--- require("onedark").load()
+  require("onedark").load()
 -- require("catppuccin").setup({
 --   flavor = "auto",
 --   transparent_background = false,
 --   term_colors = true,
 -- })
 -- require("catppuccin").load()
+end
