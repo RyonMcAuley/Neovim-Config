@@ -16,6 +16,7 @@ return {
 			local word = vim.fn.expand('<cWORD>')
 			builtin.grep_string({ search = word })
 		end)
+      vim.keymap.set('n', '<leader>gr', require('telescope.builtin').lsp_references, {})
       vim.keymap.set('n', '<leader>ds', builtin.lsp_document_symbols, {})
 	    vim.keymap.set('n', '<leader>ps', function()
 		    builtin.grep_string({ search = vim.fn.input("Grep > ") }) end)

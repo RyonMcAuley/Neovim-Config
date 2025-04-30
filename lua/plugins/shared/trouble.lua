@@ -25,6 +25,11 @@ return {
     -- Location List
     vim.keymap.set("n", "<leader>xl", "<cmd>TroubleToggle loclist<cr>", opts)
     -- LSP References
-    vim.keymap.set("n", "gR", "<cmd>TroubleToggle lsp_references<cr>", opts)
+    vim.keymap.set('n', 'gR', function()
+    require('trouble').open("lsp_references")
+    vim.defer_fn(function()
+      vim.cmd("wincmd j")  -- move focus to the window below
+    end, 100)
+    end, { desc = "LSP references (Trouble with auto focus)" })
   end
 }
