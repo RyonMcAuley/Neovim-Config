@@ -18,8 +18,8 @@ return {
 		vim.keymap.set('n', '<C-n>', function() harpoon:list():select(3) end)
 		vim.keymap.set('n', '<C-s>', function() harpoon:list():select(4) end)
 
-		vim.keymap.set('n', '<M-j>', function() harpoon:list():prev() end)
-		vim.keymap.set('n', '<M-k>', function() harpoon:list():next() end)
+		vim.keymap.set('n', '<M-i>', function() harpoon:list():prev() end)
+		vim.keymap.set('n', '<M-o>', function() harpoon:list():next() end)
 	end
 }
 
