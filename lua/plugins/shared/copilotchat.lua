@@ -6,6 +6,20 @@ return {
   },
   opts = {
     -- Optional: customize if needed
+    context = {
+      strategy = "default", -- Auto-detect the best strategy
+      providers = {
+        "current_file",
+        "visible_buffers",
+      },
+    },
+  },
+  context = {
+    strategy = "default", -- Auto-detect the best strategy
+    providers = {
+      "current_file",
+      "visible_buffers",
+    },
   },
   cmd = { "CopilotChat", "CopilotChatToggle" }, -- Lazy-load on command
   keys = {
@@ -17,6 +31,9 @@ return {
     submit_prompt = {
       insert = "<S-CR>", -- Shift + Enter to submit the prompt in insert mode
       normal = "<CR>", -- Enter to submit the prompt in normal mode
+    },
+    show_diff = {
+      full_diff = true, -- Show full diff
     }
   },
 }

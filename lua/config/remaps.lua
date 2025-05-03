@@ -45,3 +45,7 @@ vim.keymap.set('n', '<leader>gs', OpenLazyGit, { desc = "Open LazyGit" })
 --vim.keymap.set('i', '<S-CR>', function()
 --  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<Esc><CR>', true, false, true), 'n', true) end, { desc = "Send Copilot Messages" })
 --
+
+-- binds for bnext and bprev
+vim.keymap.set('n', '<S-Tab>', ':bnext<CR>', { desc = "Next Buffer" })
+vim.keymap.set('n', '<Tab>', ':bprevious<CR>', { desc = "Previous Buffer" })
