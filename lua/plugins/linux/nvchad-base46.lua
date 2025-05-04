@@ -4,7 +4,9 @@ return {
   priority = 1000,
   config = function()
     local base46 = require('base46')
-    local scheme = 'tokyonight-trans'
+    -- local scheme = 'tokyonight-trans'
+    local scheme = 'horizon-trans'
+    -- local scheme = 'decay-trans'
 
     if base46.base46 == nil then
       base46.base46 = {
