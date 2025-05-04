@@ -26,7 +26,7 @@ vim.api.nvim_set_keymap('n', 'j', 'gj', { noremap = true })
 vim.api.nvim_set_keymap('n', 'k', 'gk', { noremap = true })
 
 -- Clear highlighting
-vim.api.nvim_set_keymap('n', 'hn', ':noh<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>h', ':noh<CR>', { noremap = true, silent = true })
 
 -- Easier delete rest of line
 vim.api.nvim_set_keymap('n', 'dl', 'd$', { noremap = true })
