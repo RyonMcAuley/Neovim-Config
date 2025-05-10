@@ -15,6 +15,7 @@ return {
             html = { "prettier" },
             -- python = { "black", "isort" },
             sh = { "shfmt" },
+            rust = { "rustfmt" },
         },
     },
 }
