@@ -61,7 +61,7 @@ require("lazy").setup({
 
 if uname == "Windows_NT" then
     -- require("oxocarbon")
-    require("onedark").load()
+    -- require("onedark").load()
     -- require("catppuccin").setup({
     --   flavor = "auto",
     --   transparent_background = false,
