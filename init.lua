@@ -4,6 +4,7 @@ vim.cmd("set softtabstop=4")
 vim.cmd("set shiftwidth=4")
 vim.cmd("set rnu")
 vim.cmd("set number")
+vim.cmd("set nowrap")
 vim.opt.termguicolors = true
 
 require("config.lazy")

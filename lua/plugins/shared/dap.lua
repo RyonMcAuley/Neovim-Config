@@ -1,35 +1,43 @@
--- return {
---     "mfussenegger/nvim-dap"
--- }
 return {
     "mfussenegger/nvim-dap",
     dependencies = {
+        "nvim-neotest/nvim-nio", -- List this as a top-level dependency
         {
             "rcarriga/nvim-dap-ui",
             dependencies = {
-                "nvim-neotest/nvim-nio",
+                "nvim-neotest/nvim-nio", -- Keep it here too to ensure proper ordering
             },
+        },
+        {
+            "rcarriga/nvim-dap-ui",
+            "jay-babu/mason-nvim-dap.nvim",
             config = function()
-                local dap, dapui = require("dap"), require("dapui")
-
-                dapui.setup()
-
-                -- Automatically open and close UI
-                dap.listeners.after.event_initialized["dapui_config"] = function()
-                    dapui.open()
-                end
-                dap.listeners.before.event_terminated["dapui_config"] = function()
-                    dapui.close()
-                end
-                dap.listeners.before.event_exited["dapui_config"] = function()
-                    dapui.close()
-                end
+                require("mason-nvim-dap").setup({
+                    ensure_installed = { "codelldb" }, -- just examples
+                    automatic_setup = true,
+                })
+                require("mason-nvim-dap").setup_handlers()
             end,
         },
     },
 
     config = function()
         local dap = require("dap")
+        local dapui = require("dapui")
+
+        -- Setup dapui first
+        dapui.setup()
+
+        -- Automatically open and close UI
+        dap.listeners.after.event_initialized["dapui_config"] = function()
+            dapui.open()
+        end
+        dap.listeners.before.event_terminated["dapui_config"] = function()
+            dapui.close()
+        end
+        dap.listeners.before.event_exited["dapui_config"] = function()
+            dapui.close()
+        end
 
         -- Keymaps mimicking Visual Studio behavior
         vim.keymap.set("n", "<F5>", dap.continue, { desc = "DAP: Continue/Start" })
@@ -42,8 +50,7 @@ return {
 
         -- Optional extras
         -- vim.keymap.set("n", "<Leader>dr", dap.repl.open, { desc = "DAP: Open REPL" })
-        -- vim.keymap.set("n", "<Leader>du", require("dapui").toggle, { desc = "DAP UI: Toggle" })
-        local dap = require("dap")
+        vim.keymap.set("n", "<Leader>du", dapui.toggle, { desc = "DAP UI: Toggle" })
 
         dap.adapters.go = function(callback, config)
             local handle
@@ -84,5 +91,7 @@ return {
                 processId = require("dap.utils").pick_process,
             },
         }
+        -- Load Rust debugging configuration from separate file
+        require("dap.rust_debug").setup()
     end,
 }
