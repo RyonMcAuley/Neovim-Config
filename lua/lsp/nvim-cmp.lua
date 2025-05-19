@@ -17,23 +17,23 @@ cmp.setup({
 
     mapping = {
         -- Basic completion keybindings
-        ['<C-Space>'] = cmp.mapping.complete(),        -- Trigger completion
+        ['<C-Space>'] = cmp.mapping.complete(),            -- Trigger completion
         ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Confirm selection
         ['<Tab>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
-        ['<S-Tab>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
+        ['<Shift-Tab>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
     },
 
     sources = {
         { name = 'nvim_lsp' }, -- LSP source
-        { name = 'buffer' }, -- Buffer source (for in-file completion)
-        { name = 'path' }, -- Path source (e.g., for file paths)
-        { name = 'luasnip' }, -- Snippet source
-        { name = 'rust' }, -- Rust source (if using rust-tools)
+        { name = 'buffer' },   -- Buffer source (for in-file completion)
+        { name = 'path' },     -- Path source (e.g., for file paths)
+        { name = 'luasnip' },  -- Snippet source
+        { name = 'rust' },     -- Rust source (if using rust-tools)
     },
 
     experimental = {
         native_menu = false, -- Use the native menu (optional)
-        ghost_text = true, -- Show ghost text (optional)
+        ghost_text = true,   -- Show ghost text (optional)
     },
 })
 
