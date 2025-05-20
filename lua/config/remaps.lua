@@ -49,3 +49,6 @@ vim.keymap.set('n', '<leader>gs', OpenLazyGit, { desc = "Open LazyGit" })
 -- binds for bnext and bprev
 vim.keymap.set('n', '<S-Tab>', ':bnext<CR>', { desc = "Next Buffer" })
 vim.keymap.set('n', '<Tab>', ':bprevious<CR>', { desc = "Previous Buffer" })
+
+-- binds for deleting word at a time
+vim.keymap.set('i', '<C-BS>', '<Esc>dwa', { silent = true, desc = "Delete Word" })
