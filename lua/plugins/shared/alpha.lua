@@ -119,7 +119,7 @@ return {
             "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠛⠛⠛⠛⠛⠛⠛⠋⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
         }
         dashboard.section.buttons.val = {
-            -- dashboard.button("e", icons.documents.NewFile .. "  New file", ":ene <BAR> startinsert <CR>"),
+            dashboard.button("n", icons.documents.NewFile .. "  New file", ":ene <BAR> startinsert <CR>"),
             dashboard.button("e", icons.documents.OpenFile .. "  File Explorer", "<cmd>Yazi<CR>"),
             dashboard.button("f", icons.ui.Search .. "  Find file", ":Telescope find_files <CR>"),
             dashboard.button("r", icons.documents.OpenFile .. "  Recently used files", ":Telescope oldfiles <CR>"),
