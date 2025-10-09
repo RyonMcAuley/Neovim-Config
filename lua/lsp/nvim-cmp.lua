@@ -1,6 +1,6 @@
 -- nvim-cmp setup
 local cmp = require('cmp')
-local lspconfig = require('lspconfig')
+-- local lspconfig = require('lspconfig')
 
 -- Setup nvim-cmp
 cmp.setup({
@@ -38,8 +38,13 @@ cmp.setup({
 })
 
 -- Configure OmniSharp LSP
-lspconfig.omnisharp.setup({
+-- lspconfig.omnisharp.setup({
+--     cmd = { "C:\\path\\to\\OmniSharp.exe", "--languageserver", "--hostPID", tostring(vim.fn.getpid()) },
+--     enable_import_completion = true,
+--     organize_imports_on_format = true,
+-- })
+vim.lsp.config['omnisharp'].setup {
     cmd = { "C:\\path\\to\\OmniSharp.exe", "--languageserver", "--hostPID", tostring(vim.fn.getpid()) },
     enable_import_completion = true,
     organize_imports_on_format = true,
-})
+}

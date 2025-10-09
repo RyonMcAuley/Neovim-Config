@@ -6,6 +6,9 @@
 -- require("lsp.go-lsp")
 --
 return function(capabilities)
-  local lspconfig = require("lspconfig")
-  lspconfig.lua_ls.setup({ capabilities = capabilities })
+    local lspconfig = require("lspconfig")
+    lspconfig.lua_ls.setup({ capabilities = capabilities })
+    -- vim.lsp.config['lua_ls'].setup({
+    --     capabilities = capabilities
+    -- })
 end
