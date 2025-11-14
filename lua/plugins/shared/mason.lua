@@ -136,6 +136,7 @@ return {
                 ensure_installed = {
                     "gopls",
                     "omnisharp",
+                    -- "omnisharp.json-lsp",
                     "ts_ls",
                     "lua_ls",
                     "rust_analyzer",

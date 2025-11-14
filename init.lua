@@ -7,6 +7,15 @@ vim.cmd("set number")
 vim.cmd("set nowrap")
 vim.opt.termguicolors = true
 
+-- Suppress OmniSharp INVALID_SERVER_MESSAGE spam
+local orig_notify = vim.notify
+vim.notify = function(msg, level, opts)
+    if type(msg) == "string" and msg:match("INVALID_SERVER_MESSAGE") then
+        return
+    end
+    orig_notify(msg, level, opts)
+end
+
 require("config.lazy")
 require("config.remaps")
 require("config.autocmds")
