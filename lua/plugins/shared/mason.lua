@@ -140,6 +140,7 @@ return {
                     "ts_ls",
                     "lua_ls",
                     "rust_analyzer",
+                    "jdtls",
                 },
             })
             handlers = {
