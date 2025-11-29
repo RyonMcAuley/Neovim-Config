@@ -140,7 +140,7 @@ return {
                     "ts_ls",
                     "lua_ls",
                     "rust_analyzer",
-                    "jdtls",
+                    -- "jdtls",
                 },
             })
             handlers = {
@@ -153,6 +153,7 @@ return {
                             end
                             map("n", "K", vim.lsp.buf.hover, "Hover Docs")
                             map("n", "<leader>rn", vim.lsp.buf.rename, "Rename Symbol")
+                            -- map("n", "K", vim.lsp.buf.rename, "Rename Symbol")
                             map("n", "<leader>ca", vim.lsp.buf.code_action, "Code Action")
                         end,
                     })
