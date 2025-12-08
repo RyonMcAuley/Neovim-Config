@@ -6,6 +6,7 @@ vim.cmd("set rnu")
 vim.cmd("set number")
 vim.cmd("set nowrap")
 vim.opt.termguicolors = true
+vim.opt.clipboard = "unnamedplus"
 
 -- Suppress OmniSharp INVALID_SERVER_MESSAGE spam
 local orig_notify = vim.notify
