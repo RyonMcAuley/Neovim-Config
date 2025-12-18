@@ -9,7 +9,7 @@ return {
             indent = { enable = true },
         }
         require("nvim-treesitter.install").prefer_git = false
-        require('nvim-treesitter.install').compilers = { "clang" }
+        require('nvim-treesitter.install').compilers = { "clang", "gcc" }
         require('nvim-treesitter.install').arch = "x64"
         require("nvim-treesitter.configs").setup(opts)
     end
