@@ -4,7 +4,7 @@ local t = ls.text_node
 local i = ls.insert_node
 
 return {
-    s("ife", {
+    s("ifer", {
         t({ "if err != nil {", "\t" }),
         t("return err"),
         t({ "", "}" }),
