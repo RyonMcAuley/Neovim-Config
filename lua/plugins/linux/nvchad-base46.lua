@@ -19,7 +19,8 @@
 --     end,
 -- }
 return {
-    -- "nvchad/base46",
+    "nvchad/base46",
+    enabled = false,
     -- lazy = false,
     -- priority = 1000,
     -- config = function()

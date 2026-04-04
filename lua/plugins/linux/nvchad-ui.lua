@@ -1,5 +1,6 @@
 return {
-    -- "nvchad/ui",
+    "nvchad/ui",
+    enabled = false,
     -- lazy = false,
     -- priority = 1000,
     -- dependences = { "nvim-tree/nvim-web-devicons", },

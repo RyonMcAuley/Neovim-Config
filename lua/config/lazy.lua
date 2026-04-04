@@ -30,6 +30,7 @@ local result = handle:read("*a")
 handle:close()
 result = result:gsub("\n", "") -- remove newline
 
+-- temporary because wsl detection is hard
 local isWSL = result == "Linux"
 
 
@@ -57,25 +58,25 @@ require("lazy").setup({
 })
 
 -- if uname == "Linux" then
---     dofile(vim.g.base46_cache .. "defaults")
---     dofile(vim.g.base46_cache .. "statusline")
+-- dofile(vim.g.base46_cache .. "defaults")
+-- dofile(vim.g.base46_cache .. "statusline")
 -- end
 -- require('base46').toggle_transparency()
 
 -- vim.api.nvim_create_autocmd("User", {
---   pattern = "VeryLazy",
---   callback = function()
---     require("base46").toggle_transparency()
---   end,
+--     pattern = "VeryLazy",
+--     callback = function()
+--         require("base46").toggle_transparency()
+--     end,
 -- })
 
 if uname == "Windows_NT" then
     -- require("oxocarbon")
     -- require("onedark").load()
     -- require("catppuccin").setup({
-    --   flavor = "auto",
-    --   transparent_background = false,
-    --   term_colors = true,
+    --     flavor = "auto",
+    --     transparent_background = false,
+    --     term_colors = true,
     -- })
     -- require("catppuccin").load()
 end
