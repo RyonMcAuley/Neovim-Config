@@ -8,6 +8,12 @@ vim.cmd("set nowrap")
 vim.opt.termguicolors = true
 vim.env.COLORTERM = "truecolor"
 vim.opt.clipboard = "unnamedplus"
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldtext = "v:lua.vim.treesitter.foldtext()"
+vim.opt.foldlevel = 99
+vim.opt.foldenable = false -- Folds are defined but not closed by default
+
 
 -- Suppress OmniSharp INVALID_SERVER_MESSAGE spam
 local orig_notify = vim.notify
