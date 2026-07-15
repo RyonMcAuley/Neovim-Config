@@ -5,6 +5,7 @@ vim.cmd("set shiftwidth=4")
 vim.cmd("set rnu")
 vim.cmd("set number")
 vim.cmd("set nowrap")
+vim.cmd("set ignorecase")
 vim.opt.termguicolors = true
 vim.env.COLORTERM = "truecolor"
 vim.opt.clipboard = "unnamedplus"
