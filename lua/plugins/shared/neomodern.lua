@@ -12,7 +12,8 @@ return {
             -----MAIN OPTIONS-----
             --
             -- Can be one of: 'iceclimber' | 'gyokuro' | 'hojicha' | 'roseprime'
-            theme = "iceclimber",
+            -- theme = "iceclimber",
+            theme = "hojicha",
             -- Can be one of: 'light' | 'dark', or set via vim.o.background
             variant = "dark",
             -- Use an alternate, darker bg
