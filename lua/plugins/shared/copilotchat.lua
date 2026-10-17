@@ -6,7 +6,7 @@ return {
     },
     opts = {
         -- Optional: customize if needed
-        model = "claude-sonnet-4.6",
+        model = "claude-opus-4.8",
         context = {
             strategy = "default", -- Auto-detect the best strategy
             providers = {
